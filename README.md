@@ -30,3 +30,7 @@
 - 클릭 시 show, hide 하는 예시 추가되었으니, 그 로직보고 다른 내용도 추가로 개발 진행
 
 #
+## **[참고 사이트]**
+- 기초 내용 정리 : https://wit.nts-corp.com/2020/03/23/6014
+- Data Picker : https://www.npmjs.com/package/@react-native-community/datetimepicker
+#
