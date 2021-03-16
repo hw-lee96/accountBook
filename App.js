@@ -14,7 +14,7 @@ function App() {
 	return (
         <View style={st.container}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="Home">
+                <Stack.Navigator initialRouteName="writeExpenditure">
                     <Stack.Screen name="Home" component={Home} options={{title:'홈화면'}}/>
                     <Stack.Screen name="writeExpenditure" component={writeExpenditure} options={{headerTitle:'가계부 작성'}}/>
                 </Stack.Navigator>
