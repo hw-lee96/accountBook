@@ -5,7 +5,7 @@ const Home = ({navigation}) => {
     return (
         <View style={st.container}>
             <Text>홈 화면입니다.</Text>
-            <Button title="가계부 작성하러 가기" onPress={ () => navigation.push('writeExpenditure')} />
+            <Button title="가계부 작성하러 가기" onPress={ () => navigation.push('WriteExpenditure')} />
         </View>
     );
 }

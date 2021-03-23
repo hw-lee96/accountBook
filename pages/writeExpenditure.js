@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import { Button, View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const writeExpenditure = ({navigation}) => {
-    const [onChangeTitle] = useState(null);
+const WriteExpenditure = ({navigation}) => {
+    const osType = 'web';
 
+    const [onChangeTitle] = useState(null);
     const [date, setDate] = useState(new Date());
     const [mode, setMode] = useState('date');
     const [show, setShow] = useState(false);
@@ -21,8 +22,16 @@ const writeExpenditure = ({navigation}) => {
     };
 
     const showDatepicker = () => {
-        showMode('date');
+        if ( osType == 'web' ) {
+            setDate(new Date(2021, 2, 28)); 
+        } else {
+            showMode('date');
+        }
     };
+
+    const writeSubmit = () => {
+        console.log(date.getFullYear(), date.getMonth()+1, date.getDate());
+    }
 
     return (
         <View>
@@ -59,6 +68,8 @@ const writeExpenditure = ({navigation}) => {
                 </View>
 
                 <Text>가계부 작성</Text>
+                <Button title="등록" onPress={writeSubmit} />
+                <br/>
                 <Button title="홈 화면으로 가기" onPress={ () => navigation.navigate('Home')} />
             </SafeAreaView>
         </View>
@@ -71,4 +82,4 @@ const st = StyleSheet.create({
     }
 });
 
-export default writeExpenditure;
+export default WriteExpenditure;

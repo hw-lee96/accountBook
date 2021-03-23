@@ -1,11 +1,14 @@
 import * as React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './pages/Home';
-import writeExpenditure from './pages/writeExpenditure';
+import WriteExpenditure from './pages/WriteExpenditure';
+
+import TodoInsert from './pages/test/TodoInsert';
+import TodoList from './pages/test/TodoList';
 
 
 const Stack = createStackNavigator();
@@ -15,12 +18,29 @@ function App() {
         <View style={st.container}>
             <NavigationContainer>
                 <Stack.Navigator initialRouteName="writeExpenditure">
+                    <Stack.Screen name="Test" component={Test} options={{title:'테스트'}}/>
                     <Stack.Screen name="Home" component={Home} options={{title:'홈화면'}}/>
-                    <Stack.Screen name="writeExpenditure" component={writeExpenditure} options={{headerTitle:'가계부 작성'}}/>
+                    <Stack.Screen name="WriteExpenditure" component={WriteExpenditure} options={{headerTitle:'가계부 작성'}}/>
                 </Stack.Navigator>
             </NavigationContainer>
         </View>
 	);
+}
+
+function TestApp() {
+    return (
+        <SafeAreaView style={styles.container}>
+            <Text style={styles.appTitle}>Hello TodoList</Text>
+
+            <View style={styles.card}>
+
+                <TodoInsert />
+
+                <TodoList />
+                
+            </View>
+        </SafeAreaView>
+    )
 }
 
 const st = StyleSheet.create({
@@ -31,4 +51,28 @@ const st = StyleSheet.create({
     }
 });
 
-export default App;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#3143e8',
+      },
+    appTitle: {
+        color: '#fff',
+        fontSize: 36,
+        marginTop: 30,
+        marginBottom: 30,
+        fontWeight: '300',
+        textAlign: 'center',
+        backgroundColor: '#3143e8',
+    },
+    card: {
+        backgroundColor: '#fff',
+        flex: 1,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
+        marginLeft: 10,
+        marginRight: 10
+    }
+});
+
+export default TestApp;
