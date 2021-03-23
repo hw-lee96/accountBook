@@ -24,6 +24,11 @@
     - npm url : https://www.npmjs.com/package/@react-native-community/datetimepicker
 
 #
+## **[2021-03-23]**
+- 노치 디자인 관련 글 
+    : `` https://blog.edit.kr/entry/Notch-%EB%85%B8%EC%B9%98-%EB%94%94%EC%9E%90%EC%9D%B8-React-Native%EC%97%90%EC%84%9C-SafeAreaView%EB%A1%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0 ``
+
+#
 ## **[Task]**
 - ``const [date, setDate] = useState(new Date());`` 이런 형식의 선언이 어떤 역할을 하는지 구체적으로 파악 필요
 
@@ -33,4 +38,5 @@
 ## **[참고 사이트]**
 - 기초 내용 정리 : https://wit.nts-corp.com/2020/03/23/6014
 - Data Picker : https://www.npmjs.com/package/@react-native-community/datetimepicker
+
 #
