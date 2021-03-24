@@ -27,6 +27,20 @@
 ## **[2021-03-23]**
 - react-native tutorial 앱 따라함
 - ``https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/09-adding-icons/adding-icons-kr.html``
+
+#
+## **[2021-03-24]**
+1. 튜토리얼 예시 이미지랑 다르게 나와서 소스 똑같이 복붙함
+    - 화면 사이즈 자체 문제였으며, 반응형으로 수치 계산해서 적용해야됨
+    
+    > 참고 사이트 : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
+
+#
+
+
+
+
+
 #
 ## **[Task]**
 - ``const [date, setDate] = useState(new Date());`` 이런 형식의 선언이 어떤 역할을 하는지 구체적으로 파악 필요
@@ -40,5 +54,8 @@
 
 - 노치 디자인 관련 글 
     : `` https://blog.edit.kr/entry/Notch-%EB%85%B8%EC%B9%98-%EB%94%94%EC%9E%90%EC%9D%B8-React-Native%EC%97%90%EC%84%9C-SafeAreaView%EB%A1%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0 ``
+
+- 반응형 관련 글 (Dimension API)
+    : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
 
 #
