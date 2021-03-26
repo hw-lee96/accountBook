@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Button, StyleSheet, Text, View, SafeAreaView, ScrollView, useState } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Button, StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -28,25 +28,44 @@ function App() {
 }
 
 
-// const [count, setCount] = useState(0);
 
-// const [availableDeviceWidth, setAvailableDivceWidth] = useState(true);
-// const [availableDeviceHeight, setAvailableDivceHeight] = useState(common.dh());
-
-// useEffect(() => {
-//     const updateLayout = () => {
-//         setAvailableDivceWidth(common.dw());
-//         setAvailableDivceHeight(common.dh());
-//     };
- 
-//     Dimensions.addEventListener('change', updateLayout);
- 
-//     return () => {
-//         Dimensions.removeEventListener('change', updateLayout);
-//     };
-// });
 
 function TestApp() {
+
+    const [availableDeviceWidth, setAvailableDivceWidth] = useState(common.dw());
+    const [availableDeviceHeight, setAvailableDivceHeight] = useState(common.dh());
+
+    useEffect(() => {
+        const updateLayout = () => {
+            console.log(common.dw());
+            console.log(common.dh());
+            setAvailableDivceWidth(common.dw());
+            setAvailableDivceHeight(common.dh());
+        };
+    
+        Dimensions.addEventListener('change', updateLayout);
+    
+        return () => {
+            Dimensions.removeEventListener('change', updateLayout);
+        };
+    });
+    
+    if ( availableDeviceHeight < 500 ) {
+        return (
+            <SafeAreaView style={styles.container}>
+                <Text style={styles.appTitle}>Hello TodoList</Text>
+    
+                <View style={styles.card}>
+    
+                    <TodoInsert />
+    
+                    <TodoList />
+    
+                </View>
+            </SafeAreaView>
+        )
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <Text style={styles.appTitle}>Hello TodoList</Text>
