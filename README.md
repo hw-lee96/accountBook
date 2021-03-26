@@ -53,6 +53,32 @@
     - portrait : 세로만 지원
 
 #
+## **[2021-03-26]**
+1. react-dom 업데이트 함
+    - 다시 롤백함
+
+2. useState
+    - react에서 import 해야되는데 react-native에서 하고있었음.
+    - 수정 후 정상동작하길래 react-dom 롤백함 (업데이트 후 경고문구 계속 떠서)
+
+3. ``const [date, setDate] = useState(new Date());``
+    - 이게 useState 관련 문법이였음.
+    - Hook 이라고 하며, React 16.8에 새로 추가된 기능으로 class를 작성하지 않고도 state와 다른 React의 기능들을 사용할 수 있게 해줌
+    - useState는 현재의 state 값(위에서 date)과 이 값을 업데이트 하는 함수(setDate)를 쌍으로 제공한다.
+        - 기존 class의 this.setState와 거의 유사하지만, 이전 state와 새로운 state를 합치지는 않는다는 차이가 있음
+
+4. 튜토리얼 todo list 완성함
+
+#
+
+
+
+
+
+
+
+
+#
 ## **[Task]**
 - ``const [date, setDate] = useState(new Date());`` 이런 형식의 선언이 어떤 역할을 하는지 구체적으로 파악 필요
 
