@@ -86,14 +86,20 @@
 
 #
 ## **[참고 사이트]**
-- 기초 내용 정리 : https://wit.nts-corp.com/2020/03/23/6014
-- Data Picker : https://www.npmjs.com/package/@react-native-community/datetimepicker
+- 기초 내용 정리 : ``https://wit.nts-corp.com/2020/03/23/6014``
 
-- 튜토리얼 : ``https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/08-todolistitem/todolistitem-kr.html``
+- Data Picker : ``https://www.npmjs.com/package/@react-native-community/datetimepicker``
 
-- 반응형 인터페이스 : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
+- 튜토리얼 (todo list) : ``https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/08-todolistitem/todolistitem-kr.html``
+
+- 반응형 인터페이스
+    : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
+
+- 리액트 기초 : ``https://reactnative.dev/docs/intro-react``
 
 - 이펙트 훅 : ``https://ko.reactjs.org/docs/hooks-effect.html``
+
+- 훅 docu : ``https://ko.reactjs.org/docs/hooks-overview.html``
 
 - Dimensions docu : ``https://reactnative.dev/docs/dimensions``
 
@@ -102,5 +108,7 @@
 
 - 반응형 관련 글 (Dimension API)
     : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
+
+- 백터아이콘 : ``https://oblador.github.io/react-native-vector-icons/``
 
 #
