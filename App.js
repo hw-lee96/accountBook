@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, StyleSheet, Text, View, SafeAreaView, ScrollView } from 'react-native';
+import { Button, StyleSheet, Text, View, SafeAreaView, ScrollView, useState } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -9,6 +9,7 @@ import WriteExpenditure from './pages/WriteExpenditure';
 
 import TodoInsert from './pages/test/TodoInsert';
 import TodoList from './pages/test/TodoList';
+import common from './common';
 
 
 const Stack = createStackNavigator();
@@ -25,6 +26,25 @@ function App() {
         </View>
     );
 }
+
+
+// const [count, setCount] = useState(0);
+
+// const [availableDeviceWidth, setAvailableDivceWidth] = useState(true);
+// const [availableDeviceHeight, setAvailableDivceHeight] = useState(common.dh());
+
+// useEffect(() => {
+//     const updateLayout = () => {
+//         setAvailableDivceWidth(common.dw());
+//         setAvailableDivceHeight(common.dh());
+//     };
+ 
+//     Dimensions.addEventListener('change', updateLayout);
+ 
+//     return () => {
+//         Dimensions.removeEventListener('change', updateLayout);
+//     };
+// });
 
 function TestApp() {
     return (
@@ -46,7 +66,8 @@ const st = StyleSheet.create({
     container: {
         flex: 1,
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        
     }
 });
 
@@ -54,12 +75,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#3143e8',
+        width: common.dw(100),
+        height: common.dh(100),
+        borderColor:'red',
+        borderWidth:1,
     },
     appTitle: {
         color: '#fff',
         fontSize: 36,
-        marginTop: 30,
-        marginBottom: 30,
+        marginTop: common.dh(5),
+        marginBottom: common.dh(5),
         fontWeight: '300',
         textAlign: 'center',
         backgroundColor: '#3143e8',
@@ -71,13 +96,6 @@ const styles = StyleSheet.create({
         borderTopRightRadius: 10, // to provide rounded corners
         marginLeft: 10,
         marginRight: 10,
-    },
-    input: {
-        padding: 20,
-        borderBottomColor: '#bbb',
-        borderBottomWidth: 1,
-        fontSize: 24,
-        marginLeft: 20,
     },
 });
 
