@@ -36,10 +36,21 @@
     > 참고 사이트 : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
 
 #
+## **[2021-03-25]**
+1. react-native 에서 지원하는 Dimensions API 이용하여 반응형 인터페이스 구현
+    - common.js 파일 생성 및 반응형 인터페이스 관련 함수 정의
 
+2. react 버전 업데이트
+    - 이펙트 훅(useState) 에러가 발생해서 react, react-dom 최신버전으로 업데이트
+    - react 먼저 최신버전으로 업데이트 했으나 계속 에러발생함
+        - npm i react@latest
+    - react-dom도 업데이트 해야됨
+        - npm i react-dom@latest
 
-
-
+3. app.json > orientation 수정
+    - default : 가로, 세로 지원
+    - landscape : 가로만 지원
+    - portrait : 세로만 지원
 
 #
 ## **[Task]**
@@ -51,6 +62,14 @@
 ## **[참고 사이트]**
 - 기초 내용 정리 : https://wit.nts-corp.com/2020/03/23/6014
 - Data Picker : https://www.npmjs.com/package/@react-native-community/datetimepicker
+
+- 튜토리얼 : ``https://jeffgukang.github.io/react-native-tutorial/docs/basic-tutorial/basic-features(todolist)/08-todolistitem/todolistitem-kr.html``
+
+- 반응형 인터페이스 : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
+
+- 이펙트 훅 : ``https://ko.reactjs.org/docs/hooks-effect.html``
+
+- Dimensions docu : ``https://reactnative.dev/docs/dimensions``
 
 - 노치 디자인 관련 글 
     : `` https://blog.edit.kr/entry/Notch-%EB%85%B8%EC%B9%98-%EB%94%94%EC%9E%90%EC%9D%B8-React-Native%EC%97%90%EC%84%9C-SafeAreaView%EB%A1%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EA%B8%B0 ``
