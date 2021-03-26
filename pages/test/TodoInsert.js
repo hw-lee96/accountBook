@@ -1,6 +1,7 @@
 // components/TodoInsert.js
 import React from 'react';
 import { Button, StyleSheet, TextInput, View } from 'react-native';
+import common from '../../common';
 
 const TodoInsert = () => {
     return (
@@ -26,14 +27,14 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 1,
-        padding: 20,
+        padding: common.dw(5),
         borderBottomColor: '#bbb',
         borderBottomWidth: 1,
         fontSize: 24,
-        marginLeft: 20,
+        marginLeft: common.dw(5),
     },
     button: {
-        marginRight: 50,
+        marginRight: common.dw(5),
     },
 });
 

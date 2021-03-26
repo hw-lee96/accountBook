@@ -1,6 +1,7 @@
 // components/TodoListItem.js
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import common from '../../common';
 
 const TodoListItem = () => {
     return (
@@ -12,6 +13,8 @@ const TodoListItem = () => {
         </View>
     );
 };
+
+console.log(common.dw(100));
 
 const styles = StyleSheet.create({
     container: {
@@ -26,8 +29,8 @@ const styles = StyleSheet.create({
         flex: 5,
         fontWeight: '500',
         fontSize: 18,
-        marginVertical: 20,
-        width: 200,
+        marginVertical: common.dh(3),
+        width: common.dw(80),
     },
     circle: {
         width: 30,
