@@ -22,7 +22,6 @@ export default {
         } else {
             console.error('number 혹인 bigInt 타입만 사용 가능합니다.');
         }
-    }
-
+    },
 }
 

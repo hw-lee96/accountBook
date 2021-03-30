@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import { Button, View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native';
+import React, { useState } from 'react';
+import { Button, View, Text, StyleSheet, TextInput, SafeAreaView, TouchableOpacity } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import cmSt from '../js/common/commonStyleSheet';
 
-const WriteExpenditure = ({navigation}) => {
+const WriteExpenditure = ({ navigation }) => {
     const osType = 'web';
 
     const [onChangeTitle] = useState(null);
@@ -22,15 +23,15 @@ const WriteExpenditure = ({navigation}) => {
     };
 
     const showDatepicker = () => {
-        if ( osType == 'web' ) {
-            setDate(new Date(2021, 2, 28)); 
+        if (osType == 'web') {
+            setDate(new Date(2021, 2, 28));
         } else {
             showMode('date');
         }
     };
 
     const writeSubmit = () => {
-        console.log(date.getFullYear(), date.getMonth()+1, date.getDate());
+        console.log(date.getFullYear(), date.getMonth() + 1, date.getDate());
     }
 
     return (
@@ -41,7 +42,7 @@ const WriteExpenditure = ({navigation}) => {
                         <Text>* 제목</Text>
                     </View>
                     <View>
-                        <TextInput onChangeText={onChangeTitle} placeholder="제목을 입력해주세요" />
+                        <TextInput style={st.cmInput} onChangeText={onChangeTitle} placeholder="제목을 입력해주세요" />
                     </View>
                 </View>
 
@@ -56,29 +57,38 @@ const WriteExpenditure = ({navigation}) => {
                         </View>
                         {show && (
                             <DateTimePicker
-                            testID="dateTimePicker"
-                            value={date}
-                            mode={mode}
-                            is24Hour={true}
-                            display="default"
-                            onChange={onChangeDate}
+                                testID="dateTimePicker"
+                                value={date}
+                                mode={mode}
+                                is24Hour={true}
+                                display="default"
+                                onChange={onChangeDate}
                             />
                         )}
                     </View>
                 </View>
+                
 
                 <Text>가계부 작성</Text>
-                <Button title="등록" onPress={writeSubmit} />
-                <br/>
-                <Button title="홈 화면으로 가기" onPress={ () => navigation.navigate('Home')} />
+
+                <TouchableOpacity> <Text>My button</Text> </TouchableOpacity>
+
+                <View style={cmSt.submitBtn} ><Button title="등록" onPress={writeSubmit} /></View>
+                <br />
+                <Button style={cmSt.submitBtn} title="홈 화면으로 가기" onPress={() => navigation.navigate('Home')} />
+
             </SafeAreaView>
         </View>
     )
 }
 
 const st = StyleSheet.create({
-    container : {
-        flex:9
+    container: {
+        flex: 9
+    },
+    btn: {
+        width: 50,
+        backgroundColor:'green'
     }
 });
 
