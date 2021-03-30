@@ -70,7 +70,20 @@
 4. 튜토리얼 todo list 완성함
 
 #
+## **[2021-03-30]**
+1. data를 storage에 저장하는 방법 중 asyncStorage을 이용하기로 함 (다른 방법으로는 Redux가 있음)
+    - 관련 방법을 참고할만한 문서 찾음
 
+2. 화면개발 > 데이터 정리 > 실제 저장 순으로 진행
+
+3. Button 조정
+    - Button의 style을 조정하려면 Button이 아닌 Button을 감싸고 있는 View를 조정해야 한다.
+    - ex : ``<View style={[{ width: "90%", margin: 10, backgroundColor: "red" }]}><Button onPress={this.buttonClickListener} title="Button Three" color="#FF3D00" /> </View>``
+    > 근데 잘 안됨
+
+    - 누구는 TouchableOpacity 를 사용하길 권장하기도 한다.
+    - ex : ``<TouchableOpacity style={{ height: 100, marginTop: 10 }}> <Text>My button</Text> </TouchableOpacity>``
+    > 근데 잘 안됨
 
 
 
@@ -110,5 +123,9 @@
     : ``https://wordbe.tistory.com/entry/React-Native-4-%EB%B0%98%EC%9D%91%ED%98%95-%EC%A0%81%EC%9D%91%ED%98%95-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%A7%8C%EB%93%A4%EA%B8%B0``
 
 - 백터아이콘 : ``https://oblador.github.io/react-native-vector-icons/``
+
+- data storage 예제 (async storage)
+    - async storage 기본 예제 : ``https://jw910911.tistory.com/73``
+    - get all keys 예제 : ``https://stackoverflow.com/questions/48194482/react-native-return-all-json-data-in-asyncstorage``
 
 #
