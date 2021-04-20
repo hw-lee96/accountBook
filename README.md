@@ -79,13 +79,19 @@
 3. Button 조정
     - Button의 style을 조정하려면 Button이 아닌 Button을 감싸고 있는 View를 조정해야 한다.
     - ex : ``<View style={[{ width: "90%", margin: 10, backgroundColor: "red" }]}><Button onPress={this.buttonClickListener} title="Button Three" color="#FF3D00" /> </View>``
-    > 근데 잘 안됨
+    > 높이는 안되고, 가로 길이만 조절 가능
 
     - 누구는 TouchableOpacity 를 사용하길 권장하기도 한다.
     - ex : ``<TouchableOpacity style={{ height: 100, marginTop: 10 }}> <Text>My button</Text> </TouchableOpacity>``
-    > 근데 잘 안됨
+    > TouchableOpacity 안에 Text를 View로 씌워야 함
 
+    > ex : ``<TouchableOpacity style={{ height: 100, marginTop: 10 }}> <View> <Text>My button</Text> </View> </TouchableOpacity>``
 
+#
+## **[2021-04-20]**
+1. 입력 화면 구현하고, 변수에 담아서 등록버튼 클릭 시 콘솔에 찍히도록 함
+
+#
 
 
 

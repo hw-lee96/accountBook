@@ -7,15 +7,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './pages/Home';
 import WriteExpenditure from './pages/WriteExpenditure';
 
+import cmSt from './js/common/commonStyleSheet';
 import cmUtil from './js/common/commonUtil';
 
 const Stack = createStackNavigator();
 
 function App() {
     return (
-        <View style={st.container}>
+        <View style={cmSt.container}>
             <NavigationContainer>
-                <Stack.Navigator initialRouteName="WriteExpenditure">
+                <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen name="Home" component={Home} options={{ title: '홈화면' }} />
                     <Stack.Screen name="WriteExpenditure" component={WriteExpenditure} options={{ headerTitle: '가계부 작성' }} />
                 </Stack.Navigator>
@@ -23,13 +24,4 @@ function App() {
         </View>
     );
 }
-
-const st = StyleSheet.create({
-    container: {
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'column',
-    }
-});
-
 export default App;
