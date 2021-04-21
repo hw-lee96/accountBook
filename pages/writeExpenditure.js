@@ -5,7 +5,7 @@ import cmSt from '../js/common/commonStyleSheet';
 import cm from '../js/common/commonStyleFn';
 
 const WriteExpenditure = ({ navigation }) => {
-    const osType = 'web';
+    const osType = Platform.OS;
 
     // 제목
     const [title, setTitle] = useState('');
@@ -17,7 +17,7 @@ const WriteExpenditure = ({ navigation }) => {
 
     const onChangeDate = (event, selectedDate) => {
         const currentDate = selectedDate || date;
-        setShow(Platform.OS === 'ios');
+        setShow(osType === 'ios');
         setDate(currentDate);
     };
 
