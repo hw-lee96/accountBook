@@ -92,9 +92,19 @@
 1. 입력 화면 구현하고, 변수에 담아서 등록버튼 클릭 시 콘솔에 찍히도록 함
 
 #
+## **[2021-04-21]**
+1. 모바일 디바이스 쪽 스토리지 관련 작업하려고 핸드폰에 빌드함
+    - package.json에 "local": "expo start --localhost --android" 커맨드 추가해서 npm run local 했을 때 연결된 디바이스로 빌드&실행되도록 함
+    - 핸드폰이 컴퓨터에 연결되어있어야 하며, 디버깅 모드가 켜져있어야 하고, 해당 컴퓨터에서 디버깅을 허용해야함.
 
+2. 디바이스에 빌드하면서 생긴 자잘한 오류 수정
+    - position 값을 'fixed' 대신 'absolute' 사용해야됨
+    - fontWeight 값에 숫자 기입 시에도 따옴표로 감싸야 됨
+    - br태그 사용대신 {"\n"}을 사용해야되며, 이 부분도 문자로 취급되므로, Text 태그로 감싸야 됨
 
-
+3. DatePicker는 다시 봐야될 것 같음
+    - 아래 경로에서 RNDateTimePicker 검색 후 확인
+    - https://www.npmjs.com/package/@react-native-community/datetimepicker#datepickerandroid
 
 
 #
