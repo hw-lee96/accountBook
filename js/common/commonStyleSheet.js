@@ -13,7 +13,7 @@ export default StyleSheet.create({
     botBtn : {
         width : cm.dw(100),
         height: cm.dh(10),
-        position : 'fixed',
+        position : 'absolute',
         bottom : 10,
         display : 'flex',
         alignItems : 'center',

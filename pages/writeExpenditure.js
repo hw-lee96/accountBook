@@ -129,7 +129,8 @@ const WriteExpenditure = ({ navigation }) => {
                 </TouchableOpacity>
             </View>
                 {/* <View style={cmSt.submitBtn} ><Button title="등록" onPress={writeSubmit} /></View> */}
-                <br />
+                <Text>{"\n"}</Text>
+                {/* <br> 대신 {"\n"} 사용, 문자로 취급하므로 <Text>로 감싸야됨*/}
                 {/* <Button style={cmSt.submitBtn} title="홈 화면으로 가기" onPress={() => navigation.navigate('Home')} /> */}
         </View>
     )
@@ -150,7 +151,7 @@ const st = StyleSheet.create({
     },
     inputTitle : {
         fontSize : 16,
-        fontWeight : 600,
+        fontWeight : '600',
         marginBottom : cm.dh(1),
     },
     textInput : {
