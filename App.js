@@ -8,7 +8,6 @@ import Home from './pages/Home';
 import WriteExpenditure from './pages/WriteExpenditure';
 
 import cmSt from './js/common/commonStyleSheet';
-import cmUtil from './js/common/commonUtil';
 
 const Stack = createStackNavigator();
 
