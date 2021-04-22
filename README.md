@@ -106,6 +106,28 @@
     - 아래 경로에서 RNDateTimePicker 검색 후 확인
     - https://www.npmjs.com/package/@react-native-community/datetimepicker#datepickerandroid
 
+#
+## **[2021-04-22]**
+1. DateTimePicker 관련 경고 확인
+    > 경고 내용 : [Unhandled promise rejection: TypeError: _reactNative.NativeModules.RN DatePicker Android.dismiss is not a function]
+
+    - 해결법 1 : 캐시 제거
+        - expo start -c
+
+    - 해결법 2 : expo 40.0.0 이상으로 업그레이드
+
+2. data 저장 방식으로 asyncStorage를 사용하기 위해 install 진행
+    - npm install @react-native-async-storage/async-storage
+    - asyncStorage
+        - 앱 종료시에도 유지
+    - redux
+        - 앱 실행 중에만 유지. 유사한거로 session-storage가 있지만, 데이터 저장 시 관련 내용이 업데이트 되거나, 다시 렌더링 되지 않는다.
+
+    - asyncStorage를 사용하는건 간단한데, 데이터를 string 형태로만 저장 가능한 한계 때문에 기존의 db와는 다른 설계를 해야될 것 같음.
+
+    - 일단 데이터는 테이블 명을 키값으로하고, value는 컬럼과 값 처럼 하기로 함.
+
+    - asyncStorage 추가해서 간단하게 테스트 했는데 안됨. 확인 후 수정 필요.
 
 #
 ## **[Task]**
