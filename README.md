@@ -128,6 +128,7 @@
     - 일단 데이터는 테이블 명을 키값으로하고, value는 컬럼과 값 처럼 하기로 함.
 
     - asyncStorage 추가해서 간단하게 테스트 했는데 안됨. 확인 후 수정 필요.
+        > https://react-native-async-storage.github.io/async-storage/docs/api/#getitem
 
 #
 ## **[Task]**
