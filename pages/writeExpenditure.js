@@ -3,6 +3,8 @@ import { Button, View, Text, StyleSheet, TextInput, SafeAreaView, TouchableOpaci
 import DateTimePicker from '@react-native-community/datetimepicker';
 import cmSt from '../js/common/commonStyleSheet';
 import cm from '../js/common/commonStyleFn';
+import dataUtil from '../js/common/dataUtil';
+import cmUtil from '../js/common/commonUtil';
 
 const WriteExpenditure = ({ navigation }) => {
     const osType = Platform.OS;
@@ -40,19 +42,22 @@ const WriteExpenditure = ({ navigation }) => {
     // 내용
     const [content, setContent] = useState('');
 
-    // 태그
-    const [tags, setTags] = useState('');
+    // 카테고리
+    const [category, setCategory] = useState('');
 
     // 등록 버튼
     const writeSubmit = () => {
         var obj = {
             title,
-            date : `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`,
-            price,
             content,
-            tags
+            price,
+            spentDate : cmUtil.getYYYYMMDD(date),
+            category,
+            insDate : cmUtil.getYYYYMMDD(),
+            useYn : 'Y'
         }
         console.log(obj);
+        dataUtil.setExpend(obj);
     }
 
     // 웹 포커스 (이후 모바일에도 적용 예정)
@@ -112,10 +117,10 @@ const WriteExpenditure = ({ navigation }) => {
 
                 <View style={st.inputBox}>
                     <View>
-                        <Text style={st.inputTitle}>º 태그</Text>
+                        <Text style={st.inputTitle}>º 카테고리</Text>
                     </View>
                     <View>
-                        <TextInput style={st.textInput} onChangeText={setTags} placeholder='태그를 선택해주세요'/>
+                        <TextInput style={st.textInput} onChangeText={setCategory} placeholder='카테고리를 입력해주세요'/>
                     </View>
                 </View>
             </SafeAreaView>

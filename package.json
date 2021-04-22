@@ -6,9 +6,11 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "local": "expo start --localhost --android"
+    "local": "expo start --localhost --android",
+    "rmCash": "expo start -c"
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.15.3",
     "@react-native-community/datetimepicker": "^3.2.0",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.9.3",
