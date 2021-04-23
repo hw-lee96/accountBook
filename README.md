@@ -131,6 +131,28 @@
         > https://react-native-async-storage.github.io/async-storage/docs/api/#getitem
 
 #
+## **[2021-04-23]
+1. 텍스트 입력시 키보드 올라왔을 때 하단부 텍스트 박스 가려지는 현상 수정
+    - 전체 <View>를 <ScrollView>로 감싸서 해결
+    - 처음에 keyboardShouldPersistTaps 속성을 always로 줬었는데, 지금은 제거함. 나중에 필요에 따라 추가하면 될듯
+        - keyboardShouldPersistTaps : 탭 했을 떄 키보드 노출 여부
+            - always : 다른 곳을 터치해도 키보드가 닫히지 않음
+            - (default) : 다른 곳을 터치했을 때 키보드가 닫힘. 이 때 터치한게 다른 텍스트 인풋이면 유지됨. 스크롤 했을 때도 키보드는 유지되며, 탭만 해당됨.
+
+2. dataUtil 내 함수 서로 호출
+    - this로 하면 될 줄 알았는데, 그렇게는 안됐음. export default = {} 이런 식으로 사용하던걸 const dataUtil = {} 와 같이 변경하고 따로 export 해줌.
+    
+    - 별도의 이름을 붙혔으니 해당 js에서 사용 가능하도록 상위에 const _this = dataUtil; 로 선언하여 함수에서 호출 시 _this.function 과 같이 사용 가능하도록 함.
+
+3. AsyncStorage 함수 정상 동작
+    - setData는 정상적으로 동작하는데, 버튼 클릭 함수에서 동일한 key로 getData 하면 정상적으로 조회되지 않음
+    - 버튼 클릭 함수에서 getData할 때 await 도 해봤는데 에러만 남
+    - 알고보니 await 하는게 맞았고, 에러난 이유는 해당 함수도 앞에 async 달아줘야됐음. 
+    - 결국 async 달아주고 호출 시 await 해주니까 정상적으로 조회됨.
+
+4. Object.keys 했을 때 이상하게 나옴. 확인해봐야됨
+
+#
 ## **[Task]**
 - ``const [date, setDate] = useState(new Date());`` 이런 형식의 선언이 어떤 역할을 하는지 구체적으로 파악 필요
 
