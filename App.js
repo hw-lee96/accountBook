@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import Home from './pages/Home';
 import WriteExpenditure from './pages/WriteExpenditure';
+import ExpenditureList from './pages/ExpenditureList';
 
 import cmSt from './js/common/commonStyleSheet';
 
@@ -18,6 +19,7 @@ function App() {
                 <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen name="Home" component={Home} options={{ title: '홈화면' }} />
                     <Stack.Screen name="WriteExpenditure" component={WriteExpenditure} options={{ headerTitle: '가계부 작성' }} />
+                    <Stack.Screen name="ExpenditureList" component={ExpenditureList} options={{ headerTitle: '가계부 조회' }} />
                 </Stack.Navigator>
             </NavigationContainer>
         </View>
