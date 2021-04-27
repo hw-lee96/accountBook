@@ -1,6 +1,5 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
 const _this = dataUtil;
 
 const setData = async (key, value) => {
@@ -17,7 +16,7 @@ const setData = async (key, value) => {
 const getData = async (key) => {
     try {
         let value = await AsyncStorage.getItem('@' + key);
-        if (typeof value === 'object') value = JSON.parse(value);
+        value = JSON.parse(value);
         console.log('getData value : ', value);
         console.log('getData Done.');
         return value
@@ -77,13 +76,7 @@ const dataUtil = {
     // 가계부 조회
     getExpend: async () => {
         let obj = await getData('expenditure');
-        console.log(obj);
-        // 왜 key가 이상하게 나오냐
-        console.log(Object.keys(obj));
-
-        // let result = Object.keys(obj).map( key => [Number(key), obj[key]]);
-        // console.log('result : ' + result);
-        return '';
+        return Object.keys(obj).map( key => obj[key]);
     },
 
     // 데이터 삭제(key)
