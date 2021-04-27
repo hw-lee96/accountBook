@@ -131,7 +131,7 @@
         > https://react-native-async-storage.github.io/async-storage/docs/api/#getitem
 
 #
-## **[2021-04-23]
+## **[2021-04-23]**
 1. 텍스트 입력시 키보드 올라왔을 때 하단부 텍스트 박스 가려지는 현상 수정
     - 전체 <View>를 <ScrollView>로 감싸서 해결
     - 처음에 keyboardShouldPersistTaps 속성을 always로 줬었는데, 지금은 제거함. 나중에 필요에 따라 추가하면 될듯
@@ -151,6 +151,23 @@
     - 결국 async 달아주고 호출 시 await 해주니까 정상적으로 조회됨.
 
 4. Object.keys 했을 때 이상하게 나옴. 확인해봐야됨
+
+#
+## **[2021-04-27]**
+1. Object.keys 정상 동작 확인
+    - 데이터 불러올 때 data == object 일 때 JSON.parse가 되어있었음. 불러오는 데이터가 string이니 파싱 안돼서 Object.keys가 안됨.
+    - data 에 JSON.parse 하는 것으로 정상 변환 및 Object.keys 정상 동작 확인
+
+2. 리스트 형태로 출력하기
+    - FlatList를 이용했다. 그리고 data에 불러온 expendList를 담았는데 useState로 만든게 아니라 데이터를 조회한 뒤에 화면에 갱신이 되지 않음.
+    - useState를 이용해서 expendList를 만들었다. 그리고 그냥 생으로 setList()하여 갱신하게 했더니 무한루프가 돌았다.
+    - useEffect(Hook)를 이용해서 컴포넌트가 마운트될 때 데이터를 한 번 조회하도록 했음.
+
+3. 리스트 스크롤이 작은 범위가 아니라 전체화면 사이드에 표시되도록 이전에 ScrollView 작업 한 내용과 동일하게 함
+
+4. 리스트 안에 수정버튼 추가했는데 TouchableOpacity가 안눌려서 고민하다가 zIndex 주니까 잘 눌림.
+
+5. 나중에 수정버튼이랑 제목 텍스트랑 겹치는 부분 조치해야될 것 같음. 제목 Text의 width 값에 제한을 준다던가.
 
 #
 ## **[Task]**
