@@ -1,30 +1,35 @@
 import React from 'react';
 import { Button, View, Text, StyleSheet } from 'react-native';
 import dataUtil from '../js/common/dataUtil';
+import cmSt from '../js/common/commonStyleSheet';
+import cmBtn from '../js/common/commonBtn';
+import cm from '../js/common/commonStyleFn';
 
 const Home = ({navigation}) => {
     return (
-        <View style={st.container}>
-            <Text>홈 화면입니다.</Text>
-            <Button title="가계부 작성하러 가기" onPress={ () => navigation.push('WriteExpenditure')} />
-            <Text>{"\n"}</Text>
-            <Button title="가계부 조회하러 가기" onPress={ () => navigation.push('ExpenditureList')} />
-            <Text>{"\n"}</Text>
-            <Text>{"\n"}</Text>
-            <Text>{"\n"}</Text>
-            <Button title="가계부 인덱스 초기화" onPress={ () => dataUtil.removeData('expendIdx')} />
-            <Text>{"\n"}</Text>
-            <Button title="가계부 전체 초기화" onPress={ () => dataUtil.removeData('expenditure')} />
-            <Text>{"\n"}</Text>
-            <Button title="전체 데이터 초기화" onPress={ () => dataUtil.dataClearAll('expendIdx')} />
+        <View style={[cmSt.homeContainer, cmSt.flAIC]}>
+            <View style={[cmSt.flAIC]}>
+                { cmBtn.blueBtn( '가계부 작성하러 가기', () => navigation.push('WriteExpenditure'), st.btnMargin )}
+                { cmBtn.blueBtn( '가계부 조회하러 가기', () => navigation.push('ExpenditureList'), st.btnMargin )}
+            </View>
+
+            <View style={[cmSt.flAIC, st.bottomMenu]}>
+                { cmBtn.redBtn( '가계부 인덱스 초기화', () => dataUtil.removeData('expendIdx'), st.btnMargin )}
+                { cmBtn.redBtn( '가계부 전체 초기화', () => dataUtil.removeData('expenditure'), st.btnMargin )}
+                { cmBtn.redBtn( '전체 데이터 초기화', () => dataUtil.dataClearAll('expendIdx'), st.btnMargin )}
+            </View>
         </View>
     );
 }
 
 const st = StyleSheet.create({
-    container : {
-        flex : 1,
-        backgroundColor : '#fff'
+    btnMargin : {
+        marginTop : cm.dh(3),
+        marginBottom : cm.dh(3),
+    },
+    bottomMenu : {
+        position : 'absolute',
+        bottom : cm.dh(3),
     }
 });
 
