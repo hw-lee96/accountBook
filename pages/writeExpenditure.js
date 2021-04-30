@@ -5,9 +5,11 @@ import cmSt from '../js/common/commonStyleSheet';
 import cm from '../js/common/commonStyleFn';
 import dataUtil from '../js/common/dataUtil';
 import cmUtil from '../js/common/commonUtil';
+import cmBtn from '../js/common/commonBtn';
 
 const WriteExpenditure = ({ navigation }) => {
-    const osType = Platform.OS;
+    // const osType = Platform.OS;
+    const osType = 'web';
 
     // 제목
     const [title, setTitle] = useState('');
@@ -127,11 +129,13 @@ const WriteExpenditure = ({ navigation }) => {
 
                 <View style={cmSt.botBtn}>
                     {/* <Text>가계부 작성</Text> */}
-                    <TouchableOpacity style={cmSt.submitBtn} onPress={writeSubmit} >
+                    { cmBtn.defaultBtn('등록', () => writeSubmit, null,'green') }
+
+                    {/* <TouchableOpacity style={cmSt.submitBtn} onPress={writeSubmit} >
                         <View>
                             <Text style={cmSt.submitText}>등록</Text>
                         </View>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
                 <Text>{"\n"}</Text>
                 {/* <br> 대신 {"\n"} 사용, 문자로 취급하므로 <Text>로 감싸야됨*/}

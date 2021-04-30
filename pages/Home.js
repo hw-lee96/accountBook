@@ -9,14 +9,14 @@ const Home = ({navigation}) => {
     return (
         <View style={[cmSt.homeContainer, cmSt.flAIC]}>
             <View style={[cmSt.flAIC]}>
-                { cmBtn.blueBtn( '가계부 작성하러 가기', () => navigation.push('WriteExpenditure'), st.btnMargin )}
-                { cmBtn.blueBtn( '가계부 조회하러 가기', () => navigation.push('ExpenditureList'), st.btnMargin )}
+                { cmBtn.defaultBtn( '가계부 작성하러 가기', () => navigation.push('WriteExpenditure'), st.btnMargin, 'blue' )}
+                { cmBtn.defaultBtn( '가계부 조회하러 가기', () => navigation.push('ExpenditureList'), st.btnMargin, 'blue' )}
             </View>
 
             <View style={[cmSt.flAIC, st.bottomMenu]}>
-                { cmBtn.redBtn( '가계부 인덱스 초기화', () => dataUtil.removeData('expendIdx'), st.btnMargin )}
-                { cmBtn.redBtn( '가계부 전체 초기화', () => dataUtil.removeData('expenditure'), st.btnMargin )}
-                { cmBtn.redBtn( '전체 데이터 초기화', () => dataUtil.dataClearAll('expendIdx'), st.btnMargin )}
+                { cmBtn.defaultBtn( '가계부 인덱스 초기화', () => dataUtil.removeData('expendIdx'), st.btnMargin, 'red' )}
+                { cmBtn.defaultBtn( '가계부 전체 초기화', () => dataUtil.removeData('expenditure'), st.btnMargin, 'red' )}
+                { cmBtn.defaultBtn( '전체 데이터 초기화', () => dataUtil.dataClearAll('expendIdx'), st.btnMargin, 'red' )}
             </View>
         </View>
     );
