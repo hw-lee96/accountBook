@@ -2,10 +2,13 @@ import { StyleSheet } from 'react-native';
 import cm from './commonStyleFn';
 
 export default StyleSheet.create({
-    container : {
+    appContainer : {
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+    },
+    homeContainer : {
+        flex : 1,
     },
     btnContainer : {
         marginBottom:cm.dh(10)
