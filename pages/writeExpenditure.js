@@ -129,7 +129,7 @@ const WriteExpenditure = ({ navigation }) => {
 
                 <View style={cmSt.botBtn}>
                     {/* <Text>가계부 작성</Text> */}
-                    { cmBtn.defaultBtn('등록', () => writeSubmit, null,'green') }
+                    { cmBtn.defaultBtn('등록', writeSubmit, null,'green') }
 
                     {/* <TouchableOpacity style={cmSt.submitBtn} onPress={writeSubmit} >
                         <View>
