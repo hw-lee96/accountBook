@@ -12,7 +12,22 @@ const ExpenditureList = ({ navigation }) => {
         setList(await dataUtil.getExpend());
     }
 
-    const test = () => {console.log('edit button click!')}
+    const editExpenditure = (expendIdx) => {
+        console.log(expendIdx);
+
+        let obj = {};
+        obj[expendIdx] = {
+            category: "update"+expendIdx,
+            content: "update"+expendIdx,
+            expendIdx: "1",
+            insDate: "2021504",
+            price: 0,
+            spentDate: "2021504",
+            title: "update"+expendIdx,
+            useYn: "Y",
+        }
+        dataUtil.updateExpend(obj);
+    }
 
     useEffect(() => {
         initData();
@@ -20,26 +35,26 @@ const ExpenditureList = ({ navigation }) => {
 
     return (
         <ScrollView>
-            <View style={cmSt.FL9, cmSt.dpFlex, cmSt.flAICJCC}>
-                <SafeAreaView style={cmSt.dpFlex, cmSt.flDC, cmSt.flAICJCC, cmSt.btnContainer}>
+            <View style={[cmSt.FL9, cmSt.dpFlex, cmSt.flAICJCC]}>
+                <SafeAreaView style={[cmSt.dpFlex, cmSt.flDC, cmSt.flAICJCC, cmSt.btnContainer]}>
                     <FlatList 
                         data={expendList}
                         renderItem={
                             ({item}) => 
                                 <View style={st.itemBox}>
                                     <View style={st.editBtn}>
-                                        <TouchableOpacity style={st.editBtn2} onPress={test} >
+                                        <TouchableOpacity style={st.editBtn2} onPress={ () => editExpenditure(item.expendIdx) } >
                                             <View>
                                                 <Text style={st.editText}>수정</Text>
                                             </View>
                                         </TouchableOpacity>
                                     </View>
                                     
-                                    <Text>제목 : {!item.title? '없음':item.title}</Text>
-                                    <Text>내용 : {!item.content? '없음':item.content}</Text>
-                                    <Text>가격 : {!item.price? 0:item.price}</Text>
-                                    <Text>소비일 : {item.spentDate}</Text>
-                                    <Text>카테고리 : {!item.category? '없음':item.category}</Text>
+                                    <Text style={st.boxText}>제목 : {!item.title? '없음':item.title}</Text>
+                                    <Text style={st.boxText}>내용 : {!item.content? '없음':item.content}</Text>
+                                    <Text style={st.boxText}>가격 : {!item.price? 0:item.price}</Text>
+                                    <Text style={st.boxText}>소비일 : {item.spentDate}</Text>
+                                    <Text style={st.boxText}>카테고리 : {!item.category? '없음':item.category}</Text>
                                 </View>
                         }
                     />
@@ -57,8 +72,11 @@ const st = StyleSheet.create({
         borderStyle: 'solid',
         marginTop : 20,
         padding : 10,
+        borderColor : '#ddd',
     },
-
+    boxText : {
+        color : '#ddd',
+    },
     editBtn : {
         zIndex : 1,
         position : 'absolute',
