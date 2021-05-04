@@ -73,10 +73,18 @@ const dataUtil = {
         await setData('expendIdx', expendIdx + 1);
     },
 
+    // 가계부 수정
+    updateExpend: async (obj) => {
+        await mergeData('expenditure', obj);
+    },
+
     // 가계부 조회
     getExpend: async () => {
         let obj = await getData('expenditure');
-        return Object.keys(obj).map( key => obj[key]);
+        return obj ? Object.keys(obj).map( key => {
+            obj[key]['expendIdx'] = key;
+            return obj[key];
+        }) : null;
     },
 
     // 데이터 삭제(key)
