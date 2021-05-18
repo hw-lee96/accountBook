@@ -57,6 +57,7 @@ const ExpenditureList = ({ navigation }) => {
                                     <Text style={st.boxText}>카테고리 : {!item.category? '없음':item.category}</Text>
                                 </View>
                         }
+                        keyExtractor={(item, index) => index.toString()}        // 각 아이템의 키값을 지정
                     />
                 </SafeAreaView>
             </View>
