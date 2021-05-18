@@ -161,11 +161,15 @@ const st = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         marginBottom: cm.dh(1),
+        color: '#fff',
     },
     textInput: {
         margin: 5,
-        borderBottomColor: 'black',
-        backgroundColor: '#fff'
+        borderBottomColor: '#ddd',
+        borderBottomWidth : 1,
+        backgroundColor: '#303030',
+        color : '#ddd',
+
     }
 });
 
